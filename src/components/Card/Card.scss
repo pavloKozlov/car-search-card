@@ -1,10 +1,12 @@
+$card-padding: 20px;
+
 .card {
     border: 1px solid grey;
     width: 250px;
 
     &--title {
         text-align: left;
-        margin: 20px;
+        margin: $card-padding;
     }
 
     >hr {
@@ -12,12 +14,16 @@
     }
 
     &--body {
-        padding: 20px;
+        padding: $card-padding;
         > * {
             margin-bottom: 20px;
         }
         > *:last-child {
             margin-bottom: 0;   
         }
+    }
+
+    &--footer {
+        padding: 15px $card-padding;
     }
 }
