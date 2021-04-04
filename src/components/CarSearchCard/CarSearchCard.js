@@ -3,6 +3,7 @@ import withLabel from '../../hoc/withLabel';
 import Card from '../Card';
 import DropDown from '../DropDown';
 import Input from '../Input';
+import Button from '../Button';
 
 const LabeledDropDown = withLabel(DropDown);
 const LabeledInput = withLabel(Input);
@@ -36,12 +37,15 @@ const options = [{
 /**
  * Card component to search for cars.
  */
-const CarSearchCard = () => (
-    <Card title="Buy a car">
-        <LabeledDropDown label="Brand:" className="S1" options={options} onChange={(value) => console.log(value)} prompt="- All Brands -" />
-        <LabeledDropDown label="Model:" className="S2" options={options} onChange={(value) => console.log(value)} prompt="- Select a brand first -" />
-        <LabeledInput label="Keyword:" onChange={(value) => console.log(value)}/>
-    </Card>
-);
+const CarSearchCard = () => {
+    const renderFooter = () => (<Button id="B" onClick={() => console.log('button clicked')}>Search cars</Button>);
+    return (
+        <Card title="Buy a car" footerContent={renderFooter()}>
+            <LabeledDropDown label="Brand:" id="S1" options={options} onChange={(value) => console.log(value)} prompt="- All Brands -" />
+            <LabeledDropDown label="Model:" id="S2" options={options} onChange={(value) => console.log(value)} prompt="- Select a brand first -" />
+            <LabeledInput label="Keyword:" id="T" onChange={(value) => console.log(value)} />
+        </Card>
+    );
+}
 
 export default CarSearchCard;

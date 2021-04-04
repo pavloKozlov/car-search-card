@@ -6,12 +6,17 @@ import withValueOnChange from '../../hoc/withValueOnChange';
 /**
  * Input component.
  */
-const Input = ({ onChange }) => (
-    <input className="input" onChange={onChange} />
+const Input = ({ id, onChange }) => (
+    <input id={id} className="input" onChange={onChange} />
 );
 
 Input.propTypes = {
+    id: PropTypes.string,
     onChange: PropTypes.func.isRequired,
+};
+
+Input.defaultProps = {
+    className: '',
 };
 
 export default withValueOnChange(Input);
