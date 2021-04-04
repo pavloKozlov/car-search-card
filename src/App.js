@@ -1,6 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
+import Card from './components/Card';
 import DropDown from './components/DropDown';
+import withLabel from './hoc/withLabel';
+
+const LabeledDropDown = withLabel(DropDown);
 
 const options = [{
   id: '1',
@@ -31,7 +34,10 @@ const options = [{
 function App() {
   return (
     <div className="App">
-      <DropDown className="S1" options={options} onChange={(value) => console.log(value)} prompt="- All Brands -" />
+      <Card title="Buy a car">
+        <LabeledDropDown label="Brand:" className="S1" options={options} onChange={(value) => console.log(value)} prompt="- All Brands -" />
+        <LabeledDropDown label="Model:" className="S2" options={options} onChange={(value) => console.log(value)} prompt="- Select a brand first -" />
+      </Card>
     </div>
   );
 }
