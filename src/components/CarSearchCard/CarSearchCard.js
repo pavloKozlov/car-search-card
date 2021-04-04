@@ -34,9 +34,9 @@ const options = [{
 }];
 
 /**
- * Card component that contains of car filters.
+ * Card component to search for cars.
  */
-const CarFilterCard = () => (
+const CarSearchCard = () => (
     <Card title="Buy a car">
         <LabeledDropDown label="Brand:" className="S1" options={options} onChange={(value) => console.log(value)} prompt="- All Brands -" />
         <LabeledDropDown label="Model:" className="S2" options={options} onChange={(value) => console.log(value)} prompt="- Select a brand first -" />
@@ -44,4 +44,4 @@ const CarFilterCard = () => (
     </Card>
 );
 
-export default CarFilterCard;
+export default CarSearchCard;

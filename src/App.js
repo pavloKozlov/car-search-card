@@ -1,5 +1,5 @@
 import './App.css';
-import CarFilterCard from './components/CarFilterCard';
+import CarFilterCard from './components/CarSearchCard';
 
 function App() {
   return (
