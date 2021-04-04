@@ -1,22 +1,17 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Input.scss';
+import withValueOnChange from '../../hoc/withValueOnChange';
 
 /**
  * Input component.
  */
-const Input = ({ onChange }) => {
-    const memoizedOnChange = useCallback((event) => {
-        onChange(event.target.value);
-    }, [onChange]);
-
-    return (
-        <input className="input" onChange={memoizedOnChange} />
-    );
-}
+const Input = ({ onChange }) => (
+    <input className="input" onChange={onChange} />
+);
 
 Input.propTypes = {
     onChange: PropTypes.func.isRequired,
 };
 
-export default Input;
+export default withValueOnChange(Input);
