@@ -1,0 +1,9 @@
+.with-label {
+    text-align: left;
+
+    &--label {
+        >* {
+            margin-top: 10px;
+        }
+    }
+}
