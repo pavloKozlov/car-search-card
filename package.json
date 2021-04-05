@@ -14,13 +14,15 @@
   },
   "devDependencies": {
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.0",
+    "dependency-cruiser": "^9.24.0",
     "enzyme": "^3.11.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:deptree": "depcruise --include-only '^src' --output-type dot src | dot -T svg > ./docs/dependencygraph.svg"
   },
   "eslintConfig": {
     "extends": [
