@@ -11,8 +11,8 @@ const DropDown = ({ options, prompt, id, name, onChange }) => (
     <select id={id} name={name} className="drop-down" onChange={onChange}>
         <option className="drop-down__option drop-down__option--prompt" value="">{prompt}</option>
         {
-            options.map(({ id, label }) => (
-                <option className="drop-down__option" key={id} value={id}>{label}</option>
+            options.map((option) => (
+                <option className="drop-down__option" key={option.id} value={option.id}>{option.name}</option>
             ))
         }
     </select>
@@ -21,17 +21,18 @@ const DropDown = ({ options, prompt, id, name, onChange }) => (
 DropDown.propTypes = {
     options: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.string.isRequired,
-        label: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
     })),
     prompt: PropTypes.string,
     id: PropTypes.string,
     name: PropTypes.string,
-    onChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func,
 };
 
 DropDown.defaultProps = {
     options: [],
     prompt: '',
+    onChange: () => {},
 };
 
 export default withValueOnChange(DropDown);

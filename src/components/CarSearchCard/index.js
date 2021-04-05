@@ -1,3 +1,3 @@
-import CarSearchCard from './CarSearchCard';
+import CarSearchCardContainer from './CarSearchCardContainer';
 
-export default CarSearchCard;
+export default CarSearchCardContainer;

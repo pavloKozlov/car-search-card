@@ -4,7 +4,7 @@ import CarFilterCard from './components/CarSearchCard';
 function App() {
   return (
     <div className="App">
-      <CarFilterCard onSubmit={(formData) => console.log({ formData })} />
+      <CarFilterCard />
     </div>
   );
 }
