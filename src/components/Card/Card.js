@@ -5,24 +5,19 @@ import './Card.scss';
 /**
  * Card component with title, body and footer divided by horizontal lines.
  */
-const Card = ({ title, children, footerContent }) => (
-    <div className="card">
-        <h3 className="card--title">{title}</h3>
-        <hr />
-        <div className="card--body">
+const Card = ({ title, children }) => {
+    return (
+        <div className="card">
+            <h3 className="card--title">{title}</h3>
+            <hr />
             {children}
         </div>
-        <hr />
-        <div className="card--footer">
-            {footerContent}
-        </div>
-    </div>
-);
+    );
+}
 
 Card.propTypes = {
     title: PropTypes.string.isRequired,
     children: PropTypes.node,
-    footerContent: PropTypes.node,
 };
 
 export default Card;

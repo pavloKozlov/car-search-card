@@ -38,12 +38,19 @@ const options = [{
  * Card component to search for cars.
  */
 const CarSearchCard = () => {
-    const renderFooter = () => (<Button id="B" onClick={() => console.log('button clicked')}>Search cars</Button>);
     return (
-        <Card title="Buy a car" footerContent={renderFooter()}>
-            <LabeledDropDown label="Brand:" id="S1" options={options} onChange={(value) => console.log(value)} prompt="- All Brands -" />
-            <LabeledDropDown label="Model:" id="S2" options={options} onChange={(value) => console.log(value)} prompt="- Select a brand first -" />
-            <LabeledInput label="Keyword:" id="T" onChange={(value) => console.log(value)} />
+        <Card title="Buy a car">
+            <form  onSubmit={(e) => {e.preventDefault();console.log('submit')}}>
+                <div className="card--body">
+                    <LabeledDropDown label="Brand:" id="S1" options={options} onChange={(value) => console.log(value)} prompt="- All Brands -" />
+                    <LabeledDropDown label="Model:" id="S2" options={options} onChange={(value) => console.log(value)} prompt="- Select a brand first -" />
+                    <LabeledInput label="Keyword:" id="T" onChange={(value) => console.log(value)} />
+                </div>
+                <hr />
+                <div className="card--footer">
+                    <Button id="B" type="submit">Search cars</Button>
+                </div>
+            </form>
         </Card>
     );
 }
