@@ -8,20 +8,26 @@ import CarSearchCard from './CarSearchCard';
 const CarSearchCardContainer = () => {
     const [carBrands, setCarBrands] = useState([]);
     const [carModels, setCarModels] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
+        setIsLoading(true);
         getCarBrands()
-            .then((data) => setCarBrands(data));
+            .then((data) => setCarBrands(data))
+            .finally(() => setIsLoading(false));
     }, []);
 
     const onBrandSelect = (brandId) => {
+        setIsLoading(true);
         setCarModels([]);
         getCarModelsByBrand(brandId)
-            .then((data) => setCarModels(data));
+            .then((data) => setCarModels(data))
+            .finally(() => setIsLoading(false));
     }
 
     return (
         <CarSearchCard
+            isLoading={isLoading}
             carBrands={carBrands}
             carModels={carModels}
             onBrandSelect={onBrandSelect}

@@ -5,6 +5,7 @@ import Card from '../Card';
 import DropDown from '../DropDown';
 import Input from '../Input';
 import Button from '../Button';
+import LoadingOverflow from '../LoadingOverflow';
 
 const LabeledDropDown = withLabel(DropDown);
 const LabeledInput = withLabel(Input);
@@ -12,7 +13,7 @@ const LabeledInput = withLabel(Input);
 /**
  * Card component to search for cars.
  */
-const CarSearchCard = ({ carBrands, carModels, onBrandSelect, onSubmit }) => {
+const CarSearchCard = ({ isLoading, carBrands, carModels, onBrandSelect, onSubmit }) => {
     const [isBrandSelected, setIsBrandSelected] = useState();
     const [keyword, setKeyword] = useState();
 
@@ -42,6 +43,9 @@ const CarSearchCard = ({ carBrands, carModels, onBrandSelect, onSubmit }) => {
                     <Button id="B" type="submit" disabled={!isButtonEnabled}>Search cars</Button>
                 </div>
             </form>
+            {
+                isLoading && <LoadingOverflow />
+            }
         </Card>
     );
 }
