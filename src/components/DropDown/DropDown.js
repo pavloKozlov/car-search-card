@@ -7,8 +7,8 @@ import withValueOnChange from '../../hoc/withValueOnChange';
  * Dropdown component with options.
  * When no value is selected, the prompt is shown by default or empty space if no prompt is provided to the component.
  */
-const DropDown = ({ options, prompt, id, onChange }) => (
-    <select id={id} className="drop-down" onChange={onChange}>
+const DropDown = ({ options, prompt, id, name, onChange }) => (
+    <select id={id} name={name} className="drop-down" onChange={onChange}>
         <option className="drop-down__option drop-down__option--prompt" value="">{prompt}</option>
         {
             options.map(({ id, label }) => (
@@ -25,6 +25,7 @@ DropDown.propTypes = {
     })),
     prompt: PropTypes.string,
     id: PropTypes.string,
+    name: PropTypes.string,
     onChange: PropTypes.func.isRequired,
 };
 
