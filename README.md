@@ -1,4 +1,4 @@
-# Frontend Test
+# Car search card
 
 Build the functionality described in `./docs/functional-design.pdf`.
 
@@ -54,11 +54,3 @@ Please adhere to the following `ids` for identifying your inputs.
  When any of #S1, #S2 and #T are filled in:
  #B should be enabled.
 ```
-
-## Questions?
-
-If you have any questions please send an email to DL-eCG-NL-FE-Assessment@ebay.com.
-
-## Finished?
-
-Please send an email to DL-eCG-NL-FE-Assessment@ebay.com let us know you're done.
